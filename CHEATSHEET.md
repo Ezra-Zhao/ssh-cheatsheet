@@ -147,6 +147,8 @@ ssh -L 5433:db.internal:5432 deploy@example.com
 ```bash
 ssh -R 9000:localhost:3000 deploy@example.com
 # on the SERVER, localhost:9000 now reaches the app on YOUR localhost:3000
+# default bind is the server's loopback only — other machines can't reach it;
+# exposing it further needs GatewayPorts yes in the SERVER's sshd_config (an admin call, not a client flag)
 # classic use: let a colleague test the dev server running on your laptop
 ```
 🏷️ `#tunnels` `#remote-forward`
@@ -246,8 +248,9 @@ Log in as a normal user and use `sudo`. Middle ground: `PermitRootLogin prohibit
 ```text
 PubkeyAuthentication yes
 PasswordAuthentication no
+KbdInteractiveAuthentication no
 ```
-⚠️ Verify key-based login works in a **new** session first. With passwords off, a lost key means you're locked out and only console access gets you back in.
+⚠️ Verify key-based login works in a **new** session first. With passwords off, a lost key means you're locked out and only console access gets you back in. The third line matters too: on PAM-based systems the password prompt can survive through keyboard-interactive even with PasswordAuthentication no.
 🏷️ `#sshd` `#hardening` `#keys`
 ### `AllowUsers` + `MaxAuthTries` — shrink the attack surface
 ```text

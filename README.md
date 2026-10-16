@@ -56,6 +56,7 @@ Host myserver
 - **隧道三件套分清**：-L / -R / -D 到底是谁的端口听在谁那边，一句话讲透，不再现查。
 - **config 是复利**：别名 + ProxyJump 配置一次，之后每次连接少打一长串，scp / rsync 也自动受益。
 - **加固给安全改法**：先验密钥登录、`sshd -t` 校验语法、reload 不断现有会话——照着做，不会把自己锁在门外。
+- **两个坑先说清**：-R 远程转发默认只绑服务器本机回环，从外网连不上（要对外暴露得服务器端 sshd 开 GatewayPorts）；关密码登录时把 KbdInteractiveAuthentication 一并关掉——PAM 系统上只关 PasswordAuthentication，口令提示还会留着。
 
 ## 欢迎 PR
 
