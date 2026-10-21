@@ -2,6 +2,9 @@
 
 [![Stars](https://img.shields.io/github/stars/Ezra-Zhao/ssh-cheatsheet?style=social)](https://github.com/Ezra-Zhao/ssh-cheatsheet/stargazers) [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE) ![Languages](https://img.shields.io/badge/languages-3-blue)
 
+Support & more: [GitHub Sponsors](https://github.com/sponsors/Ezra-Zhao) · [Gumroad — templates & workbooks I use](https://ezraflow28.gumroad.com) · [Ko-fi](https://ko-fi.com/ezra777zhao)
+
+
 > 🌍 [Español](README.es.md) · [Português](README.pt.md)
 
 一份**一页纸**的 SSH 速查表：28 条真实可用的 SSH 用法——连接、密钥、`~/.ssh/config`、端口转发、跳板机、文件传输、服务端加固。每个条目只讲三件事——**它是干什么的、一条能直接复制粘贴的命令、适用场景标签**。不编造参数：所有参数与配置项均对照本机 OpenSSH 9.6 的 man 手册逐条核对，config 示例用 `ssh -G` 实际解析验证过。
